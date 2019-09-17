@@ -1,0 +1,1 @@
+document.write("<h2>不喜欢小宝剑</h2>");//向body中追加html内容

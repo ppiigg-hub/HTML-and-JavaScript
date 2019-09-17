@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>16-数组</title>
+</head>
+<body>
+<!--
+
+JS数组的特点:
+    1.JS是弱类型,数组元素类型任意
+    2. JS的数组类似于Java的集合,长度可变,所以有时又把js数组叫做数组或集合
+	
+数组
+    要求能够查询w3c手册完成如下功能
+        1. 创建数组 []
+
+        2. 数组合并 concat
+        3. 添加元素
+            数组头添加 unshift
+            数组尾添加 push
+        4. 删除元素
+            数组头删除 shift
+            数组尾删除 pop
+        5. 数组元素拼接为字符串 join(分隔符)
+        6. 排序数组元素 sort
+
+
+
+
+-->
+<script >
+    //1. 创建数组
+	let arr1 = ["你好","world",666,true,null,undefined];
+	let arr2 = new Array("韦小宝","D.va","杰尼龟")
+    let arr3 = [9,8,2,7,5,3]
+    //2. 数组合并
+	console.log(arr1.concat(arr2));
+    //3. 添加元素
+    arr1.unshift("第一个");//从第一个开始添加
+    arr1.push("最后一个");//从最后一个开始添加
+    console.log(arr1);
+    //4. 删除元素
+    arr1.shift();//从第一个开始删除
+    arr1.pop();//从最后一个开始删除
+    console.log(arr1);
+
+    //5. 数组元素拼接为字符串
+    console.log(arr3.join("-"));
+    //6. 排序数组元素
+    console.log(arr3.sort());//升序
+    console.log(arr3.sort(function (a, b) {return a - b}));//手动升序
+    console.log(arr3.sort(function (a, b) {return b - a}));//手动降序
+
+
+</script>
+</body>
+</html>

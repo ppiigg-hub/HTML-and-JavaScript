@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>15-常用事件</title>
+</head>
+<body>
+<!--
+常用事件
+    1. onload 页面加载完成
+    2. onfocus 获取焦点
+    3. onblur 失去焦点
+    4. onchange 表单控件的值改变时
+    5. onclick 鼠标单击
+
+-->
+
+姓名 <input type="text"><br/>
+学历
+<select name="edu" id="edu">
+    <option value="0">请选择</option>
+    <option value="1">本科</option>
+    <option value="2">大专</option>
+</select>
+<br/>
+<button id="btn">按钮</button>
+<script >
+    //1. onload 页面加载完成
+    window.onload = function () {
+        console.log("页面加载完成");
+    }
+
+    //2. onfocus 获取焦点
+    function  myfocus() {
+        console.log("onfocus 获取焦点");
+    }
+
+    //3. onblur 失去焦点
+    let input = document.querySelector('input[type="text"]')//获取输入框
+	input.onblur = function () {
+        console.log("onblur 失去焦点");
+        console.log(this.value);//输入框的值
+    }
+    //4. onchange 表单控件的值改变时
+	let selet = document.querySelector("#edu")
+    selet.onchange  = function  onchange() {
+        console.log("onchange 表单控件的值改变时");
+        console.log(this.value);
+    }
+    //5. onclick 鼠标单击
+    function  myclick() {
+        selet.value = input.value;//把输入框的值赋给下拉列表
+    }
+	
+</script>
+</body>
+</html>

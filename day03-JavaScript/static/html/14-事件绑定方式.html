@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>14-事件的绑定方式</title>
+</head>
+<body>
+<!--
+事件的绑定方式
+    1. 命名函数 格式 onEvent=函数
+    2. 匿名函数 格式 onEvent=函数
+-->
+
+<p onclick="myf1(this)" title="我是P1">1. 命名函数</p>
+<p id="myp" title="我是P2" >2. 匿名函数 </p>
+
+<script >
+    console.log(this);
+
+    //1. 命名函数 格式 onEvent=函数
+	function myf1(obj) {
+        console.log("1. 命名函数");
+        console.log(this);
+        console.log(obj);
+        console.log(obj.title);
+
+    }
+    //2. 匿名函数 格式 onEvent=函数
+	let p2 = document.querySelector("#myp")
+    p2.onclick = function () {
+        console.log("2. 匿名函数");
+        console.log(this);
+        console.log(p2.title);
+        console.log(this.title);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-JS变量</title>
+</head>
+<body>
+<!--
+JS变量 是用来存放数据
+    es5以前变量声明使用var
+    es6之后变量声明使用let 常量声明使用const 他们用于替代var声明方式
+    
+    JS是弱类型语言(理解):
+        声明变量时不知道变量的类型(undefined),只有在复制之后js变量才确定类型.
+        typeof() 输出变量的类型
+        undefined 变量未赋值,未知类型
+
+
+
+-->
+<script >
+    //字符串 Java声明 String str ="张三";
+    let str ="张三";
+    console.log(str);
+    //整数  Java声明 int k = 5;
+    let k = 5;
+    console.log(k);
+    //小数 Java声明 float f = 7.5;
+    let f = 7.5;
+    console.log(f);
+    //常量 Java声明 final Integer PI = 3.14;
+    const PI = 3.14;
+    console.log(PI);
+    //PI = 666.999;//报错 Assignment to constant variable. 赋值非给常量
+
+    //演示弱类型语言
+    let m;
+    console.log(m);//undefined 值是未赋值
+    console.log(typeof m);//undefined 未赋值类型
+    m = "哈哈";
+    console.log(m);
+    console.log(typeof m);//string
+    m = 999;
+    console.log(m);
+    console.log(typeof m);//number
+    m = null;//new Object();
+    console.log(m);
+    console.log(typeof m);//object
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>12-JS函数</title>
+</head>
+<body>
+<!--
+JS函数
+    1. 普通函数 格式 function 函数名(参数){return}
+    2. 匿名函数 格式 function(参数){return}
+注意
+    a.普通函数和匿名函数中都有一个参数数组对象 arguments
+    b. JS函数的调用只以函数名区分,与参数无关
+
+-->
+<script >
+    //1. 普通函数 格式 function 函数名(参数){return}
+    function myf1(str) {
+        console.log("myf1接收的参数=>"+str);
+        console.log(arguments);//方法接收的参数数组
+        return str;
+    }
+
+    //调用普通函数
+    let s1 = myf1("韦小宝");
+    console.log("myf1返回=>"+s1);
+
+    //2. 匿名函数 格式 function(参数){return}
+    let myf2 = function (str) {
+        console.log(str);
+        console.log(arguments);
+        return str;
+    }
+	
+    //调用匿名函数
+    let s2 = myf2("韦大宝");
+    console.log(s2);
+
+    //a,b  JS函数的调用只以函数名区分,与参数无关
+    s2 = myf2();
+    console.log(s2);
+    s2=myf2(11,12,13,14);
+    console.log(s2);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>17-日期</title>
+</head>
+<body>
+<!--
+日期
+    查询手册完成:
+    1. 创建日期对象
+    2. 获取当前时间 转为字符串 格式 yyyy-MM-dd HH:mm:ss.SSS
+
+小扩展:
+      字符串补位方法 padStart(位数,填充值) 例如要把7补齐为07 "7".padStart(2,"0")
+      (了解)字符串模板 `字符串` 内部可以使用${变量名称} 取变量值. 注意${}与jsp中的${}冲突.
+-->
+
+<script >
+    //1. 创建日期对象
+    let d = new Date();
+    //2. 获取当前时间 转为字符串 格式 yyyy-MM-dd HH:mm:ss.SSS
+    let fullYear = d.getFullYear();//年
+    let month = new String(d.getMonth()+1).padStart(2,"0");//月
+    let day = new String(d.getDate()).padStart(2,"0");//日
+    let hours = new String(d.getHours()).padStart(2,"0");//时
+    let minutes = new String(d.getMinutes()).padStart(2,"0");//分
+    let seconds = new String(d.getSeconds()).padStart(2,"0");//秒
+    let milliseconds = new String(d.getMilliseconds()).padStart(3,"0");//毫秒
+
+    let dateStr = `${fullYear}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;
+    console.log(dateStr);
+
+
+</script>
+</body>
+</html>

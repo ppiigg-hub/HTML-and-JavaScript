@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>13-案例-轮播图</title>
+</head>
+<body>
+<!--
+轮播图
+
+预习:
+    setInterval(函数,间隔时间) 每隔固定间隔时间(毫秒)执行一次函数
+    document.querySelector(css选择器) 根据css选择器获取匹配到的一个标签
+
+-->
+<img src="../img/0.jpg" width="100%">
+
+<script >
+    let img = document.querySelector("img");
+    console.log(img);//<img src="../img/0.jpg" width="100%">
+    let k = 0;
+    function myf() {
+        img.src="../img/"+k+".jpg";//给img对象的src属性赋值
+        console.log(k++);
+        if(k==5)k=0;
+    }
+    setInterval(myf,3000);//固定间隔3秒调用一次myf，直到永远
+
+</script>
+</body>
+</html>

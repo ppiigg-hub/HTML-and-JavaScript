@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>18-数学运算</title>
+</head>
+<body>
+<!--
+数学运算
+    查询手册完成
+    1. 四舍五入 round(x) 把数四舍五入为最接近的整数
+    2. 向下取整 floor(x) 对数进行下舍入。 地板
+    3. 向上取整 ceil(x) 对数进行上舍入。
+    4. 产生随机数 random() 返回 0 ~ 1 之间的随机数。
+    5. 产生 [1,10]的随机整数
+
+小扩展:
+    parseInt(x) 对x转为整数,有小数部分直接舍去. 功能类似 floor(x)
+    random() 返回 [0,1) 之间的随机数。 [0,1) 左闭右开区间,包含0不包含1
+    在任何语言的随机数中都是左闭右开.
+
+-->
+<script >
+    let n = 1234.567
+    //1. 四舍五入
+    console.log(Math.round(n));//1235
+    //2. 向下取整
+    console.log(Math.floor(n));//1234
+    //3. 向上取整
+    console.log(Math.ceil(n));1235
+    //4. 产生随机数
+    console.log(Math.random());//随机产生[0,1) 小数
+    //5. 产生 [1,10]的随机整数
+    // [0,1) *10 --> [0,10) +1 --> [1,11) floor
+    console.log((Math.floor(Math.random()* 10 + 1) ));//[1，10] 的随机整数
+
+</script>
+</body>
+</html>

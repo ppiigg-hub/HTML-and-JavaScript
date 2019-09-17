@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-JS两种引入方式</title>
+
+</head>
+<body>
+<!--
+JS两种引入方式
+    JS和CSS一样都需要引入到html页面中,浏览器才会解释执行
+    JS有两种引入方式
+        1. 内嵌(内部)脚本:在script标签中写js代码,
+            script标签推荐放置在body标签的底部,理论上和style标签一样可以放置位置任意.
+        2. 外部脚步: 使用script标签的src属性引入外部js文件,使用注意事项:
+            (没有内容还不能自闭合):
+            script标签使用了src属性以后内部的代码不再被浏览器解释执行(了解).
+            script引入外部脚本时不能使用自闭合格式(警告!!!).
+
+-->
+<Script>
+    document.write("我最爱大宝剑");
+</Script>
+<Script src="../外部脚本.js"></Script>
+</body>
+</html>

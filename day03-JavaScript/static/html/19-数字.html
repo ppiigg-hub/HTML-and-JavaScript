@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>19-数字</title>
+</head>
+<body style="width: 100vw;height: 100vh;" bgcolor="#f5f5dc" onclick="changeColor()">
+<!--
+数字
+    1. 会使用二进制,八进制,十六进制
+        js中使用 0b,0o,0x 前缀分别表示二进制,八进制,十六进制
+    2. 会把数字格式为人民币格式 如9.85
+        toFixed(小数位数) 把数字四舍五入转换为字符串，保留小数点后指定位数。
+    3.  把数字转为16进制字符
+        toString(进制) 把数字转换为字符串，使用指定的进制。
+    4. 会产生随机颜色
+    5. 点击页面,背景切换随机颜色
+小扩展:
+    vw 屏幕宽度百分比
+    vh 屏幕高度百分比
+    document.querySelector(css选择器) 根据css选择器获取匹配到的一个标签
+
+小作业:
+    每隔五秒页面自动切换一个随机颜色
+    setInterval(函数,间隔时间) 每隔固定间隔时间(毫秒)执行一次函数
+-->
+<script >
+    //1. 使用二进制,八进制,十六进制
+    let n2 = 0b11;
+    console.log(n2);//3
+    let n8 = 0o11;
+    console.log(n8);//9
+    let n16 = 0x11;
+    console.log(n16);//17
+    //2. 会把数字格式为人民币格式 如9.85
+    let price = 128.9867;
+    console.log(price.toFixed(2));//"128.99"
+    //3.  把数字转为16进制字符
+    n16 = 255;
+    console.log(n16.toString(16));//"ff"
+
+    //4. 会产生随机颜色 [0x000000,0xffffff]
+    // [0,1) *0xffffff --> [0x000000,0xffffff) round toString(16)
+    let color = "#"+Math.round(Math.random()*0xffffff).toString(16);
+    console.log(color);//随机颜色
+
+    //5. 点击页面,背景切换随机颜色
+    let body = document.querySelector("body");//获取body元素对象
+    function changeColor(){
+        let color = "#"+Math.round(Math.random()*0xffffff).toString(16);
+        console.log(color);//随机颜色
+        body.bgColor = color;
+
+    }
+
+</script>
+</body>
+</html>
