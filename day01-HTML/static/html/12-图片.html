@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>12-图片</title>
+</head>
+<body>
+<!--
+img 图片 作用 在页面中展示一个图像 常用属性
+    src 图片地址  网络地址取值方式有两种
+        1.绝对地址 例如 `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567684135368&di=0c58bb311be1d767da631ca1a136638d&imgtype=0&src=http%3A%2F%2Fimg5.ph.126.net%2F3hLddAL2jCTOhS2_FZ51HA%3D%3D%2F606860049805587105.jpg`
+        2.相对地址 ./当前目录(默认可以不写)  ../上一级目录 (非常重要!!!)
+    width 宽度 取值方式有两种
+        1.固定值 例如 100px
+        2.自适应值 所占父容器宽度的百分比 例如50%
+    height 高度 取值方式有两种
+        1.固定值 例如 100px
+        2.自适应值 所占父容器宽度的百分比 例如50%
+    alt 图片加载失败时的替换文字
+    title 鼠标文字提示(所有标签通用属性)
+
+图片注意:
+    宽度和高度一般只设置一个值,另一个会等比例缩放
+    同时设置会失真(变形)
+-->
+
+<img src="http://pic51.nipic.com/file/20141025/8649940_220505558734_2.jpg" alt=""  >
+<img src="http://pic51.nipic.com/file/20141025/8649940_220505558734_2.jpg" alt="" width="100px" height="200px" >
+<img src="../img/girl3.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>17-表格合并</title>
+</head>
+<body>
+<!--
+td 有两个属性可以完成表格合并
+    colspan 跨列(从左向右跨列) 默认值1
+    rowspan 跨行(从上向下跨行) 默认值1
+-->
+
+<table border="1px" bgcolor="aqua" cellpadding="0" cellspacing="0" width="500px" height="400px" align="center">
+    <caption>表格标题</caption>
+    <tr>
+        <td colspan="3">表头1</td>
+
+    </tr>
+    <tr align="center">
+        <td rowspan="2">2-1</td>
+        <td>2-2</td>
+        <td rowspan="2">2-3</td>
+    </tr>
+    <tr>
+
+        <td align="center">3-2</td>
+
+    </tr>
+</table>
+</body>
+</html>
