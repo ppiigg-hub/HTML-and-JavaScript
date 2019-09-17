@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>15-显示属性</title>
+    <style>
+        span,div{
+            border: 1px solid lightgray;
+            width: 500px;
+            height: 100px;
+        }        
+    </style>
+</head>
+<body>
+<!--
+显示属性
+display 标签的显示方式 常用取值
+    inline 显示为内联标签,内联标签设置宽高不起作用,因为它的宽高是由内容撑起来的.
+    block 显示为块级标签 可设置width 和height
+    none 隐藏不显示
+    inline-block 内联块 同时具备内联的不独占一行和块的可设置宽高 特点.
+
+-->
+
+<span id="s1" style="display: block;">内联标签1</span><span style="display: none;">内联标签2</span><span id="s3">内联标签3 </span>
+<div id="d1" style="display: inline;">块级标签1</div><div style="display: inline-block;">块级标签2</div><div>块级标签3</div>
+
+</body>
+</html>

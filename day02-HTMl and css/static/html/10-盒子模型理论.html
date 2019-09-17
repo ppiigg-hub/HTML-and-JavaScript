@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-盒子模型理论</title>
+</head>
+<body>
+<!--
+盒子模型的组成:
+margin (外)边距 边框之外的距离 默认透明 可以设置 上 右 下 左 的 大小
+border 边框 可以设置边框的  上 右 下 左 的 大小 类型 颜色
+padding (内)填充 边框和内容之间的距离 默认透明 可以设置 上 右 下 左 的 大小
+content 内容 是标签中内容放置区域
+
+-->
+<style>
+    div{
+        border:10px solid black;/*边框: 10px 实线 红色*/
+        padding:30px;/*填充*/
+        /*margin:20px;!*边距*!*/
+        width:200px;
+        height: 200px;
+        margin:20px auto;/*边距 上下20px 左右自动居中*/
+        border-radius:50% ;/*水平/垂直*/
+    }
+</style>
+
+<div>我是content内容1</div>
+<div>我是content内容2</div>
+<div>我是content内容3</div>
+
+</body>
+</html>

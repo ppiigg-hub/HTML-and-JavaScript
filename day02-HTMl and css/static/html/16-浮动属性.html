@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>16-浮动属性</title>
+    <style>
+        div{
+            border: 1px solid lightgray;/* 1像素 实线 浅灰色*/
+            box-sizing: border-box;/*边框作为宽高*/
+            width: 100px;/*宽*/
+            height: 100px;/*高*/
+        }
+    </style>
+</head>
+<body>
+<!--
+浮动属性
+ float 我们可以使用float属性让标签(div)脱离原来的文档流(页面自上而下,自左至右),自定义摆放方式.
+     常用属性
+     left 左浮动 内容从左向右排列
+     right 右浮动 内容从右向左排列
+ clear 清除浮动影响
+     left 清除左浮动
+     right 清除右浮动
+     both 清除左右浮动
+
+
+-->
+<style>
+    .left{
+        float:left;/*左浮动*/
+    }
+    .clear{
+        clear:both;/*清除所有浮动的影响*/
+    }
+    .right{
+        float:right;/*右浮动*/
+    }
+</style>
+<div class="left" style="background-color: red;">浮动属性1</div>
+<div class="left" style="background-color: green;">浮动属性2</div>
+<div class="clear" style="background-color: blue;">浮动属性3</div>
+<div class="right" style="background-color: gold;">浮动属性4</div>
+<div class="right">浮动属性5</div>
+</body>
+</html>

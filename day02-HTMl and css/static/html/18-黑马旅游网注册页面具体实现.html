@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>18-黑马旅游网注册页面具体实现</title>
+        <style>
+            body{
+                background-color: beige;/*背景颜色*/
+            }
+            .container{
+                border:10px ridge lightgray;/*边框 10px 桥梁 浅灰色*/
+                width: 800px;
+                height:500px;
+                box-sizing:content-box;/*标准盒子模型*/
+                margin:50px auto;/*边距 上下50px 左右自动居中*/
+                background-color: white;/*背景颜色*/
+            }
+            .child{
+                border:1px solid red;/*边框 1px 实线 红色*/
+                box-sizing:border-box;/*怪异盒子*/
+                float:left;/*左浮动*/
+                border-color: rgba(0,0,0,0);/*完全透明*/
+            }
+            .left{
+                width: 200px;
+                height:500px;
+                padding:30px;/*填充 上右下左30px*/
+                font-size:12px;/*字体大小*/
+            }
+            .left div{
+                color:gold;
+            }
+            .left span{
+                color:gray;
+            }
+            .center{
+                width: 400px;
+                height:500px;
+                font-family: "楷体";
+                color:gray;
+            }
+            .center table tr{
+                height:50px;/*高度*/
+            }
+            .right{
+                width: 200px;
+                height:500px;
+                padding:30px;/*填充 上右下左30px*/
+                font-size:12px;/*字体大小*/
+            }
+            .right a{
+                color:gold;
+            }
+            input[type="text"],input[type="password"],input[type="date"]{
+                border:1px solid lightgray;
+                border-radius:5px;/*边框圆角*/
+                width:180px;
+                height:30px;
+                padding:0px 5px;/*填充 上下0px 左右5px*/
+            }
+            input[name="userCode"]{
+                width:60px;
+            }
+            input[name="userCode"]+img{
+                vertical-align: top;/*垂直对齐 上对齐*/
+            }
+            .btn{
+                width:100px;
+                line-height: 30px;/*行高*/
+                background-color: gold;/*背景金色*/
+                border:1px solid gold;
+                border-radius:5px;/*锐角*/
+                color:#fff;/*字体白色*/
+            }
+        </style>
+
+    </head>
+<body>
+
+<div class="container">
+    <div class="child left">
+        <div>用户注册</div>
+        <span>USER REGISTER</span>
+
+    </div>
+    <div class="child center">
+        <table border="0" align="center">
+            <tr>
+                <td>用户名</td>
+                <td>
+                    <input type="text" name="userName" placeholder="请输入账号">
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td>
+                    <input type="password" name="userPass" placeholder="请输入密码">
+                </td>
+            </tr>
+            <tr>
+                <td>邮箱</td>
+                <td>
+                    <input type="text" name="userMail" placeholder="请输入邮箱">
+                </td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td>
+                    <input type="text" name="userName" placeholder="请输入姓名">
+                </td>
+            </tr>
+            <tr>
+                <td>手机号</td>
+                <td>
+                    <input type="text" name="userPhone" placeholder="请输入手机号">
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" id="male"><label for="male">男</label>&emsp;
+                    <input type="radio" id="female"><label for="female">女</label>&emsp;
+
+                </td>
+            </tr>
+            <tr>
+                <td>生日</td>
+                <td>
+                    <input type="date" name="userBirth" >
+                </td>
+            </tr>
+            <tr >
+                <td>验证码</td>
+                <td>
+                    <input type="text" name="userCode" placeholder="验证码" >
+                    <img src="../img/checkMa.png" >
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button class="btn">用户注册</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="child right">
+        <span>已有账号?<a href="#">立即登录</a></span>
+    </div>
+</div>
+</body>
+</html>

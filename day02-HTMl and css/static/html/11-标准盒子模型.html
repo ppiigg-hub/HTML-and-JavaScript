@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-标准盒子模型</title>
+</head>
+<body>
+<!--
+标准盒子模型:
+所有的html标签都可以设置宽和高
+w3c规定width和height设置的是content的宽和高,这种宽高概念被称为标准盒子模型
+现在所有的浏览器都使用的是标准盒子模型
+手动设置标准盒子模型的方式 box-sizing:content-box;
+
+-->
+<style type="text/css">
+    div{
+        border: 10px solid gray;/*灰色实线边框*/
+        margin: 10px;
+        padding: 30px;		
+        width: 300px;
+        height: 100px;
+        box-sizing: content-box;/*默认:标准盒子模型*!*/
+    }
+</style>
+
+<div>标准盒子模型1</div><div>标准盒子模型2</div><div>标准盒子模型3</div>
+</body>
+</html>

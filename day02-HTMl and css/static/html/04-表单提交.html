@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-表单提交</title>
+</head>
+<body>
+<!--
+form 表单容器 常用属性
+    action 表单数据发送到哪里
+    method 数据发送的方式 get post
+
+-->
+
+<!--<form action="#" method="get">-->
+
+
+ <form action="#" method="post">
+<!--<form action="#" method="get"> -->
+    姓名<input type="text" name="userName" value="TOM" placeholder="请输入姓名"/> <br/>
+    密码<input type="password" name="userPass" value="123" placeholder="请输入密码"/><br/>
+    生日<input type="date" name="userBirth" /><br/>
+    性别<input type="radio" name="gender" value="male"/>男&emsp;
+    <input type="radio" name="gender" value="female" checked="checked"/>女<br/>
+    爱好<input type="checkbox" name="hobby" value="smoke"/>抽烟&emsp;
+    <input type="checkbox" name="hobby" value="drink" checked />喝酒&emsp;
+    <input type="checkbox" name="hobby" value="perm"/>烫头&emsp;<br/>
+    头像<input type="file" name="userPic"/><br/>
+    学历
+    <select name="userEdu">
+        <option value="0">-请选择-</option>
+        <option value="1">小学</option>
+        <option value="2" selected="selected">初中</option>
+        <option value="3">高中</option>
+    </select><br/>
+    简介<textarea name="userIntro" cols="50" rows="10">默认值</textarea><br/>
+    <input type="reset" value="清空按钮"/><input type="submit" value="提交按钮"/><br/>
+    <input type="button" value="普通按钮"/><button type="button">专业按钮</button><button type="button">&times;</button>
+
+
+
+</form>
+
+
+
+</body>
+</html>

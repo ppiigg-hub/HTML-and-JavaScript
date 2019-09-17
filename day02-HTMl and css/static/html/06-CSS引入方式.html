@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-CSS引入方式</title>
+<!--    link用于引入外部样式文件  href指明样式文件的地址 rel指明外部文件是当前页面的stylesheet样式表-->
+    <link href="../css/外部样式01.css" rel="stylesheet"/>
+    <!--    告诉浏览器把解析器切换为CSS解析器.  type="text/css" 可以省略不写-->
+    <style type="text/css">
+        /*@import url("../css/外部样式02.css");*/
+        h2{
+            color:green;/*绿色*/
+        }
+    </style>
+</head>
+<body>
+<!--
+CSS引入方式:
+    1.行内 在标签的style属性中写样式 作用域本标签内
+    2.内部(内嵌) 在html中使用style标签写样式 style标签位置理论上任意,推荐放置在head中的底部 作用域本页面中
+    3.外部 作用域 所有引入的页面
+        a.link 在html中使用link标签引入外部样式文件
+        b.@import 在CSS中使用@import引入外部样式文件
+-->
+
+<h1 style="color:red;">1.行内</h1>
+<h2>2.内部(内嵌)</h2>
+<h3>3.外部 a.link</h3>
+<h4>3.外部 b.@import</h4>
+
+</body>
+</html>

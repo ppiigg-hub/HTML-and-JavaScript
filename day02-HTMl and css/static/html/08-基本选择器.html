@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>08-基本选择器</title>
+</head>
+<body>
+<!--
+CSS基本选择器:
+    1.标签 根据标签匹配 格式 标签{}
+    2.类 根据class值匹配  class用于给标签归类添加样式 格式 .class{}
+    3.ID 根据ID值匹配元素 id是页面中每一个标签的唯一标志  格式 #id{}
+
+   * 通配符(了解) *{}
+
+
+div#md.mc[title=uu]{我是内容}
+-->
+
+<div id="md" class="mc" title="uu">我是内容</div>
+
+<style>
+    span{/*匹配所有span标签*/
+        font-family: "楷体";/*楷体*/
+    }
+    .female{/*匹配所有class值是female的标签*/
+        color:red;/*红色字体*/
+    }
+    .hero{
+        font-size: 20px;/*字体大小*/
+    }
+    #main{/*匹配id值为main的一个标签*/
+        background-color: gold;/*背景颜色金色*/
+    }
+    *{/*所有标签统统匹配*/
+        border:1px solid lightgray;/*边框: 1px 实线 浅灰色*/
+    }
+
+</style>
+<span class="female">古力娜扎</span>
+<span class="female">迪丽热巴</span>
+<span class="female">新垣结衣</span>
+<span class="female">岛琦结衣</span>
+
+<span class="female hero">郭俊卿</span>
+<span class="male hero">杨思根</span>
+<span class="male hero">黄继光</span>
+<span class="hero">雷锋</span>
+
+<span id="main">主城</span>
+<span id="east">东港</span>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-CSS简介</title>
+<!--    告诉浏览器把解析器切换为CSS解析器-->
+    <style>
+        font{
+            color:green;/*绿色字体*/
+            font-weight: bold;/*加粗*/
+            font-style: italic;/*倾斜*/
+            line-height:32px;/*行高*/
+            text-shadow:5px 3px 2px gray;/* 阴影: x 5px y 3px 2px 灰色*/
+        }
+    </style>
+
+</head>
+<body>
+<!--
+CSS(Cascading Style Sheet)层叠样式表
+层叠样式表:对同一个标签应用不同的样式,所有样式会叠加在一起展示出效果.
+CSS优点:把HTML内容和CSS样式进行分离,降低耦合度,提高了复用性.而且提供了更加强大的美化效果.
+-->
+<font color="green"> <b><i>床前明月光</i></b></font><br/>
+
+<font>床前明月光</font><br/>
+<font>疑是地上霜</font><br/>
+<font>举头望明月</font><br/>
+<font>低头思故乡</font><br/>
+
+
+</body>
+</html>

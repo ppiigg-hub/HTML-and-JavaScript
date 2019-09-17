@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>09-扩展选择器</title>
+</head>
+<body>
+<!--
+扩展选择器
+关系
+    E,F 并列
+    E F 后代
+    E>F 亲子(亲儿子)
+    E+F 兄弟(紧邻后面出生的弟弟)
+属性
+    E[attribute=value]
+
+伪(了解) 标签在不同状态拥有不同的样式
+    :hover 鼠标悬浮时的样式
+    ::after 在标签中追加内容 配合content使用
+
+-->
+<style type="text/css">
+    span,p,body{
+        font-family: "楷体";/*楷体*/
+    }
+    div span{
+        color:red;/*红色*/
+    }
+    div>span{
+        background-color: lightgray;/*背景 浅灰色*/
+    }
+    div+span{
+        border:1px solid lightgray;/*边框: 1px 实线 浅灰色*/
+    }
+    input[type="text"]{
+        background-color: gold;/*背景 金色*/
+    }
+    #yh:hover{
+        color:red;/*红色*/
+        font-size:20px;/*字体大小*/
+    }
+    #yh:hover::after{
+        content:"-5折"
+    }
+
+</style>
+
+<div>
+    <span>烟幕弹</span>
+    <p>
+        <span id="gbl">高爆雷</span>
+    </p>
+
+</div>
+<span>兄弟(紧邻后面出生的弟弟)</span>
+<p class="jjx">急救箱</p>
+<span id="cld">催泪弹</span>
+
+<br/>
+姓名 <input type="text" name="userName" value="Jack"/><br/>
+密码 <input type="password" name="userPass" value="123456"/><br/>
+<p title="打折" id="yh">打折促销</p>
+
+</body>
+</html>
