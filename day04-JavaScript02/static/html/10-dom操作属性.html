@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>10-dom操作属性</title>
+</head>
+<body>
+<!--
+dom操作属性
+    1. 获取文本框的值,单选框或复选框的选中状态
+        语法: element.attribute 获取或修改元素的原生属性值
+    2. 给元素设置自定义属性
+        语法: element.setAttribute(属性名,属性值) 设置属性值(原生和自定义)
+    3. 获取元素的自定义属性值
+        语法: element.getAttribute(属性名) 获取属性值(原生和自定义)
+    4. 移除元素的自定义属性
+        语法: element.removeAttribute(属性名) 移除元素的属性(原生和自定义)
+    5. 获取元素的属性集合(了解)
+        语法: element.attributes 获取元素的所有属性集合
+
+小扩展:
+    w3c组织规定了每一标签所拥有的属性,这些w3c定义好的属性被称作标签的原生属性.
+    在html中允许开发者给标签添加额外的属性,这些自定义属性用来给标签添加额外的特性.
+    w3c约定开发者添加的自定义属性 以 data- 为前缀.
+
+小结(重要):
+     1. 获取或修改表单中 单选框,复选框 的选中状态时
+        使用 element.checked 得到 true或false
+        (不建议)使用 element.getAttribute(属性名) 得到的是 checked 或者 null
+
+-->
+<form action="#" method="get">
+    姓名 <input type="text" name="userName" value="张三" /> <br/>
+    密码 <input type="password" name="userPass" > <br/>
+    生日 <input type="date" name="userBirth"><br/>
+    性别 <input type="radio" name="gender" value="男" checked="checked">男&emsp;<input type="radio" name="gender" value="女"/>女<br/>
+    爱好 <input type="checkbox" name="hobby" value="smoke"  checked="checked">抽烟<input type="checkbox" name="hobby" value="drink" checked>喝酒<input type="checkbox" name="hobby" value="hothead">烫头<br/>
+    头像 <input type="file" name="userPic"><br/>
+    学历
+    <select name="userEdu" >
+        <option value="0">请选择</option>
+        <option value="1">入门</option>
+        <option value="2">精通</option>
+        <option value="3">放弃</option>
+
+    </select><br/>
+    简介
+    <textarea name="userIntro"  cols="30" rows="10">默认值</textarea><br/>
+    <input type="reset" value="清空按钮"/>
+    <input type="submit" value="提交按钮"/><br/>
+    <input type="button" value="普通按钮">
+    <button>专业按钮</button><button>&times;</button>
+
+
+</form>
+<script >
+    // 1. 获取文本框的值,单选框或复选框的选中状态(element.checked)
+    let userName = document.querySelector('input[name="userName"]');//姓名输入框框
+    console.log(userName.value);//张三
+    userName.value = "满仓";
+    let hobbys = document.querySelectorAll('input[name="hobby"]');//获取所有复选框
+    for(let h of hobbys){
+        console.log(h.checked);//选中 true 没选 false
+    }
+    //错误示例
+    for(let h of hobbys){
+        console.log(h.getAttribute("checked"));//可能的值 "checked","",null
+    }
+    // 2. 给元素设置自定义属性
+    userName.setAttribute("data-msg","慢擦擦");//设置属性值
+    // 3. 获取元素的自定义属性值
+    console.log(userName.getAttribute("data-msg"));//慢擦擦
+    // 4. 移除元素的自定义属性
+    userName.removeAttribute("data-msg");//移除属性
+    // 5. 获取元素的属性数组(集合)
+    let attrs = userName.attributes;//获取元素的所有属性值集合
+    for(let a of attrs){
+        console.log(a);
+    }
+
+</script>
+</body>
+</html>

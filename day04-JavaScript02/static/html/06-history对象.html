@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-history对象</title>
+</head>
+<body>
+<!--
+history对象(了解)
+    1. 页面后退 window.history.back(); history.go(-1);//页面后退
+    2. 页面前进 window.history.forward(); history.go(1);//页面前进
+    3. 页面刷新 history.go(0);//当前页面
+-->
+<button onclick="back()">页面后退</button>
+<button onclick="forward()">页面前进</button>
+<button onclick="refresh()">页面刷新</button>
+<a href="04-JS两个定时器.html">两个定时器</a>
+<script >
+    // 1. 页面后退
+    function back() {
+        history.back();
+        history.go(-1); //同上
+    }
+    // 2. 页面前进
+    function forward() {
+        history.forward();
+        history.go(1); //同上
+    }
+    // 3. 页面刷新
+    function refresh() {
+        history.go(0); // ===  location.reload()
+    }
+</script>
+</body>
+</html>

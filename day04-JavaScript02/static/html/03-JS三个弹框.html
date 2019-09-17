@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-JS三个弹框</title>
+</head>
+<body>
+<!--
+JS三个弹框
+    查询手册完成
+    1. 警告用户网站内容可能不安全
+        alert
+    2. 让用户确认是否删除所有数据
+        confirm 如果用户点击确认，那么返回值为 true。如果用户点击取消，那么返回值为 false。
+    3. 提示用户输入银行卡密码
+        prompt 如果用户点击确认，那么返回值为输入的值。如果用户点击取消，那么返回值为 null。
+
+小扩展:
+    在js编码中 所有的 window. 都可以省略不写. 例如 alert()
+    所有的全局函数都被挂靠在window上, 即前面都可以加window. 例如: window.eval()
+    一般都省略 window.
+
+-->
+
+<script >
+
+    // 1. 警告用户网站内容可能不安全
+    alert("您浏览器的内容害眼\n请保护眼睛");
+    // 2. 让用户确认是否删除所有数据
+    let boo = confirm("您确定要删除所有记录吗?");
+    console.log(boo);//确定true 取消 false
+    // 3. 提示用户输入银行卡密码
+    let str =  prompt("请输入银行卡密码",123); // "输入值" ""  null
+    console.log(str);//确定 输入的值  取消 null
+
+</script>
+</body>
+</html>

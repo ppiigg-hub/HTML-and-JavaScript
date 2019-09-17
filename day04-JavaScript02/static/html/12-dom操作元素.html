@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>12-dom操作元素</title>
+</head>
+<body>
+<!--
+dom操作元素
+    1. 前面添加抽烟
+        document.createElement(标签名称) 创建标签
+        parentNode.insertBefore(newNode,refNode) 把元素newNode 插入到 元素parentNode 中的 refNode之前
+    2. 后面添加烫头
+        parentNode.appendChild(newNode) 把元素newNode追加到元素parentNode中的最后
+    3. 最后添加自定义
+        element.cloneNode() 克隆元素,一般克隆完修改不同就可以,比创建元素效率高
+-->
+<button onclick="addcheck()">添加选项</button>
+<div id="container">
+<!--    <input id="smoke" type="checkbox" name="hobby" value="抽烟">-->
+<!--    <label for="smoke">抽烟&emsp;</label>-->
+    <input id="drink" type="checkbox" name="hobby" value="喝酒">
+    <label for="drink">喝酒&emsp;</label>
+
+</div>
+
+<script >
+
+    let container = document.querySelector("#container");
+    let drink = document.querySelector("#drink");
+    // 1. ^^^前面添加抽烟
+    let smoke = document.createElement("input");//创建一个input标签元素对象
+    //<input/>
+    smoke.id = "smoke";//<input id="smoke"/>
+    smoke.type = "checkbox";//<input id="smoke" type="checkbox"/>
+    smoke.name = "hobby";//<input id="smoke" type="checkbox" name="hobby"/>
+    smoke.value = "抽烟"//<input id="smoke" type="checkbox" name="hobby" value="抽烟"/>
+    console.log(smoke);//<input id="smoke" type="checkbox" name="hobby" value="抽烟">
+    let smokeLabel = document.createElement("label");//创建一个label标签对象
+    //<label></label>
+    smokeLabel.setAttribute("for","smoke");//<label for="smoke"></label>
+    smokeLabel.innerHTML = "抽烟&emsp;";//<label for="smoke">抽烟&emsp;</label>
+    //<label for="smoke">抽烟&emsp;</label>
+    container.insertBefore(smokeLabel,drink);//在container元素中的drink前面插入smokeLabel元素
+    container.insertBefore(smoke,smokeLabel);//在container元素中的smokeLabel前面插入smoke元素
+
+    // 2. ^^^后面添加烫头
+    let perm = document.createElement("input");//创建一个input标签元素对象
+    //<input/>
+    perm.id = "perm";//<input id="perm"/>
+    perm.type = "checkbox";//<input id="perm" type="checkbox"/>
+    perm.name = "hobby";//<input id="perm" type="checkbox" name="hobby"/>
+    perm.value = "烫头"//<input id="perm" type="checkbox" name="hobby" value="烫头"/>
+    console.log(perm);//<input id="perm" type="checkbox" name="hobby" value="烫头">
+    let permLabel = document.createElement("label");//创建一个label标签对象
+    //<label></label>
+    permLabel.setAttribute("for","perm");//<label for="perm"></label>
+    permLabel.innerHTML = "烫头&emsp;";//<label for="smoke">烫头&emsp;</label>
+    //<label for="smoke">烫头&emsp;</label>
+    container.appendChild(perm);//向container中追加perm元素
+    container.appendChild(permLabel);//向container中追加permLabel元素
+
+    // 3. ^^^点击按钮添加自定义选项
+    let k =1;
+    function addcheck() {
+        let str = prompt("请输入选项");// 确定 "输入值", "" 取消 null
+        if(str){//有字符串值
+            let input = perm.cloneNode();//复制input元素
+            let label = permLabel.cloneNode();//复制label元素
+            console.log(input);//<input id="perm" type="checkbox" name="hobby" value="烫头">
+            console.log(label);//<label for="smoke"></label>
+            input.id = "input"+k++;//<input id="input$" type="checkbox" name="hobby" value="烫头">
+            input.value = str;//<input id="input$" type="checkbox" name="hobby" value=str>
+            label.setAttribute("for",input.id);
+            label.innerHTML = input.value+"&emsp;";//<label for="input.id">input.value+"&emsp;"</label>
+            container.appendChild(input);//向container中追加input元素
+            container.appendChild(label);//向container中追加label元素
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

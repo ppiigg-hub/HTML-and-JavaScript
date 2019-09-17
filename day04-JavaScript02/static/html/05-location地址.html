@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-location地址</title>
+</head>
+<body>
+<!--
+location地址
+    1. 获取当前浏览器地址
+        window.location.href 属性返回当前页面的 URL。
+    2. 刷新当前页面
+        window.location.reload();//刷新页面,等同于页面的刷新按钮
+    3. 跳转页面
+        window.location.href = 新地址 跳转到新地址
+-->
+<button onclick="getLocation()">获取当前地址</button>
+<button onclick="refeshLocation()">刷新页面</button>
+<button onclick="jumpLocation()">地址跳转</button>
+<script >
+    // 1. 获取当前浏览器地址
+    function getLocation() {
+        console.log(location.href);//地址
+    }
+    // 2. 刷新当前页面
+    function refeshLocation() {
+        location.reload();//刷新
+    }
+    // 3. 跳转页面(必用)
+    function jumpLocation() {
+        // location.href = "https://www.jd.com";
+        location.href = "06-history对象.html";
+    }
+</script>
+</body>
+</html>

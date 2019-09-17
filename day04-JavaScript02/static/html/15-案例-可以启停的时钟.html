@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>15-案例-可以启停的时钟</title>
+</head>
+<body>
+<!--
+可以启停的时钟
+    实现步骤
+    1. 点击开始按钮: 使用定时器获取当前时间显示在页面中
+    2. 点击结束按钮: 清理定时器对象
+-->
+<style>
+    .clock {
+        color: red;
+        font-size: 100px;
+        font-family: "楷体";
+    }
+</style>
+<button id="start">开启</button>&emsp;<button id="stop">停止</button>
+<div class="clock"></div>
+
+<script src="../js/clock.js"></script>
+<script >
+    let start = document.querySelector("#start");//开始按钮
+    let stop = document.querySelector("#stop");//stop按钮
+    let div = document.querySelector(".clock");//div容器
+
+    let interval = null;
+    start.onclick = function () {//开启
+        //销毁定时器
+        clearInterval(interval);
+        //创建一个定时器,间隔1毫秒获取当前时间字符串设置到div中
+        interval = setInterval(function(){
+            div.innerText = getDateStr();//获取当前时间字符串设置到div中
+        },1);
+
+    }
+    stop.onclick = function () {//停止
+        //销毁定时器
+        clearInterval(interval);
+    }
+
+</script>
+</body>
+</html>

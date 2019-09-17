@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>11-dom操作样式</title>
+</head>
+<body>
+<!--
+dom操作样式
+    1. 设置一个css样式
+        语法: element.style.样式属性名 获取或设置一个css样式  属性名含有短杠-时要转为驼峰命名 例如 element.style.backgroundColor
+    2. 批量设置css样式
+        语法: element.style.cssText   获取或设置style属性的文本值
+    3. 通过class设置样式
+        语法: element.className 获取或设置class属性的文本值
+    4. 切换class样式
+        语法: element.classList es6特别提供的操作元素class的接口
+            element.classList常用方法有四个:
+            add() 添加样式
+            remove() 移除样式
+            contains() 判断是否包含某个样式
+            toggle() 切换样式,有就移除,没有就添加
+
+
+-->
+<style>
+    #p1{ background-color: red;}
+    .mp{color:green}
+    .mpp{background-color: lightgray;}
+</style>
+<p id="p1">1. 设置一个css样式</p>
+<p id="p2" >2. 批量设置css样式</p>
+<p id="p3" class="mpp">3. 通过class设置样式</p>
+<p id="p4">4. 切换class样式</p>
+
+<script >
+    let p1 = document.querySelector("#p1");//获取元素对象
+    let p2 = document.querySelector("#p2");//获取元素对象
+    let p3 = document.querySelector("#p3");//获取元素对象
+    let p4 = document.querySelector("#p4");//获取元素对象
+    // 1. 设置一个css样式
+    p1.style.color = "white";//白色
+    p1.style.backgroundColor = "#000";
+    p1.style.display = "none";//隐藏元素
+    // 2. 批量设置css样式
+    p2.style.cssText = "font-family: '楷体';border:1px solid green;background-color: #ccc;";//设置style属性的文本值
+    // 3. 通过class设置样式
+    p3.className =p3.className+" mp";
+    // 4. 切换class样式
+    let list = p4.classList;//class样式集合
+    list.add("mpp");//添加一个样式
+    console.log(list.contains("mp"));//判断是否包含某个样式 false
+    list.add("mp");//添加一个样式
+    console.log(list.contains("mp"));//判断是否包含某个样式 true
+    list.remove("mp");//移除一个样式
+    list.toggle("mp");//切换一个样式 有则删除 无则添加
+    list.toggle("mp");//切换一个样式 有则删除 无则添加
+
+
+
+</script>
+</body>
+</html>

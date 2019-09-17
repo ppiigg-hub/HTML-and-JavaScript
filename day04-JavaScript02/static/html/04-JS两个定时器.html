@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-JS两个定时器</title>
+</head>
+<body>
+
+<!--
+JS两个定时器
+    1. 定时5秒之后在控制台打印当前时间
+        setTimeout(函数,毫秒数) 在固定的毫秒数后执行一次函数
+            使用实例:
+             setTimeout(printTime,5000);
+             setTimeout("printTime()",5000);
+    2. 点击按钮取消打印时间
+        clearTimeout(定时器对象) 清除定时器对象
+    3. 每隔2秒在控制台打印递增自然数
+        setInterval(函数,毫秒数) 以固定毫秒数为频率循环执行函数
+            使用实例:
+             setInterval(printNumber,2000);
+             setInterval("printNumber()",2000);
+    4. 点击按钮取消打印自然数
+		clearInterval(定时器对象) 清除定时器对象
+
+总结:
+    定时器执行一次函数使用 setTimeout 清除定时器 clearTimeout
+    定时器循环一直执行函数使用 setInterval 清除定时器 clearInterval
+
+
+
+
+-->
+<button onclick="clearPrintTime()">取消打印时间</button>
+<button onclick="clearPrintNumber()">取消打印自然数</button>
+<script >
+    // 1. 定时5秒之后在控制台打印当前时间
+    function printTime() {
+        console.log("当前时间");
+    }
+    let timeout = setTimeout(printTime,5000);//创建一个定时器对象,5秒后调用一次printTime
+    // 2. 点击按钮取消打印时间
+    function clearPrintTime() {
+        clearTimeout(timeout);//销毁定时器
+    }
+    // 3. 每隔2秒在控制台打印递增自然数
+    let k =1;
+    function printNumber(){
+        console.log(k++);
+    }
+    let interval = setInterval(printNumber,2000);//创建一个定时器,间隔2秒调用printNumber
+    // 4. 点击按钮取消打印自然数
+    function clearPrintNumber() {
+        clearInterval(interval);//销毁定时器
+    }
+</script>
+</body>
+</html>
